@@ -1,15 +1,14 @@
 import { Image, StyleSheet, Text, View, Dimensions } from "react-native";
 import { Component } from "react";
-import CardMini from "./src/components/CardMini.js";
+import CardMini from "./CardMini";
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Footer</Text>
-        <CardMini titulo="Coisas" />
-        <CardMini titulo="Coisas" />
-        <CardMini titulo="Coisas" />
-        <CardMini titulo="Coisas" />
+        <CardMini titulo="Home" />
+        <CardMini titulo="Blocos" />
+        <CardMini titulo="Salas" />
+        <CardMini titulo="Objetos" />
       </View>
     );
   }
@@ -21,9 +20,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
     flexDirection: "row",
-    height: 70,
     width: Math.round(Dimensions.get("window").width),
     position: "absolute",
+    minHeight: 100,
     left: 0,
     right: 0,
     bottom: 0,
