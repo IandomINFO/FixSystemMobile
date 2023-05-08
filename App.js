@@ -7,6 +7,7 @@ import Salas from "./src/components/Salas";
 import Objetos from "./src/components/Objetos";
 import Homeview from "./src/components/Homeview";
 import Usuario from "./src/components/Usuario";
+import Report from "./src/components/Report";
 const Stack = createNativeStackNavigator();
 
 function HomeWrap({ navigation }) {
@@ -24,6 +25,9 @@ function ObjetosWrap({ navigation }) {
 function UsuarioWrap({ navigation }) {
   return <Usuario navigation={navigation} />;
 }
+function ReportWrap({ navigation }) {
+  return <Report navigation={navigation} />;
+}
 
 export default class App extends Component {
   render() {
@@ -40,6 +44,7 @@ export default class App extends Component {
           <Stack.Screen name="Salas" component={SalasWrap} />
           <Stack.Screen name="Objetos" component={ObjetosWrap} />
           <Stack.Screen name="Usuario" component={UsuarioWrap} />
+          <Stack.Screen name="Report" component={ReportWrap} />
         </Stack.Navigator>
       </NavigationContainer>
     );
