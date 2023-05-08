@@ -7,37 +7,25 @@ export default class Homeview extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <Text style={{ fontSize: 30, margin: 20 }}>Salas</Text>
+        <Text style={{ fontSize: 30, margin: 20 }}>Pagina inicial</Text>
         <View style={styles.content}>
           <TouchableOpacity
             style={styles.card}
-            onPress={() => this.props.navigation.navigate("Objetos")}
+            onPress={() => this.props.navigation.navigate("Blocos")}
           >
-            <Text> A1 </Text>
+            <Text> Blocos </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => this.props.navigation.navigate("Salas")}
+          >
+            <Text> Salas </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.card}
             onPress={() => this.props.navigation.navigate("Objetos")}
           >
-            <Text> A2 </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => this.props.navigation.navigate("Objetos")}
-          >
-            <Text> A3 </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => this.props.navigation.navigate("Objetos")}
-          >
-            <Text> A4 </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => this.props.navigation.navigate("Objetos")}
-          >
-            <Text> A5 </Text>
+            <Text> Objetos </Text>
           </TouchableOpacity>
         </View>
 

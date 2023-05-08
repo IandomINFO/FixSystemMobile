@@ -1,49 +1,24 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { Component } from "react";
-import Header from "./src/components/Header.js";
-import Footer from "./src/components/Footer.js";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Blocos from "./src/components/Blocos";
 import Salas from "./src/components/Salas";
 import Objetos from "./src/components/Objetos";
+import Homeview from "./src/components/Homeview";
 const Stack = createNativeStackNavigator();
 
-export class Homeview extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Header />
-        <Text style={{ fontSize: 30, margin: 20 }}>Pagina inicial</Text>
-        <View style={styles.content}>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => this.props.navigation.navigate("Blocos")}
-          >
-            <Text> Blocos </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => this.props.navigation.navigate("Salas")}
-          >
-            <Text> Salas </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.card}
-            onPress={() => navigation.navigate("Objetos")}
-          >
-            <Text> Objetos </Text>
-          </TouchableOpacity>
-        </View>
-
-        <Footer />
-      </View>
-    );
-  }
-}
-
-function Home({ navigation }) {
+function HomeWrap({ navigation }) {
   return <Homeview navigation={navigation} />;
+}
+function BlocosWrap({ navigation }) {
+  return <Blocos navigation={navigation} />;
+}
+function SalasWrap({ navigation }) {
+  return <Salas navigation={navigation} />;
+}
+function ObjetosWrap({ navigation }) {
+  return <Objetos navigation={navigation} />;
 }
 
 export default class App extends Component {
@@ -56,10 +31,10 @@ export default class App extends Component {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Blocos" component={Blocos} />
-          <Stack.Screen name="Salas" component={Salas} />
-          <Stack.Screen name="Objetos" component={Objetos} />
+          <Stack.Screen name="Home" component={HomeWrap} />
+          <Stack.Screen name="Blocos" component={BlocosWrap} />
+          <Stack.Screen name="Salas" component={SalasWrap} />
+          <Stack.Screen name="Objetos" component={ObjetosWrap} />
         </Stack.Navigator>
       </NavigationContainer>
     );

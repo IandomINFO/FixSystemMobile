@@ -1,14 +1,40 @@
-import { Image, StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+} from "react-native";
 import { Component } from "react";
-import CardMini from "./CardMini";
+
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <CardMini titulo="Home" />
-        <CardMini titulo="Blocos" />
-        <CardMini titulo="Salas" />
-        <CardMini titulo="Objetos" />
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => this.props.navigation.navigate("Home")}
+        >
+          <Text> Home </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => this.props.navigation.navigate("Blocos")}
+        >
+          <Text> Blocos </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => this.props.navigation.navigate("Salas")}
+        >
+          <Text> Salas </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => this.props.navigation.navigate("Objetos")}
+        >
+          <Text> Objetos </Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -26,5 +52,14 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
+  },
+  botao: {
+    flex: 1,
+    backgroundColor: "#4BB85D",
+    alignItems: "center",
+    justifyContent: "space-around",
+    height: 60,
+    width: 80,
+    margin: 10,
   },
 });
