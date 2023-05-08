@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { Component } from "react";
 
-export default class App extends Component {
+export default class Footer extends Component {
   render() {
     return (
       <View style={styles.container}>

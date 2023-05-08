@@ -2,11 +2,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Component } from "react";
 import Header from "./Header.js";
 import Footer from "./Footer.js";
-export default class Homeview extends Component {
+export default class Blocos extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
+        <Header navigation={this.props.navigation} />
         <Text style={{ fontSize: 30, margin: 20 }}>Blocos</Text>
         <View style={styles.content}>
           <TouchableOpacity

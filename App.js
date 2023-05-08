@@ -6,6 +6,7 @@ import Blocos from "./src/components/Blocos";
 import Salas from "./src/components/Salas";
 import Objetos from "./src/components/Objetos";
 import Homeview from "./src/components/Homeview";
+import Usuario from "./src/components/Usuario";
 const Stack = createNativeStackNavigator();
 
 function HomeWrap({ navigation }) {
@@ -19,6 +20,9 @@ function SalasWrap({ navigation }) {
 }
 function ObjetosWrap({ navigation }) {
   return <Objetos navigation={navigation} />;
+}
+function UsuarioWrap({ navigation }) {
+  return <Usuario navigation={navigation} />;
 }
 
 export default class App extends Component {
@@ -35,6 +39,7 @@ export default class App extends Component {
           <Stack.Screen name="Blocos" component={BlocosWrap} />
           <Stack.Screen name="Salas" component={SalasWrap} />
           <Stack.Screen name="Objetos" component={ObjetosWrap} />
+          <Stack.Screen name="Usuario" component={UsuarioWrap} />
         </Stack.Navigator>
       </NavigationContainer>
     );

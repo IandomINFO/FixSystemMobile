@@ -6,7 +6,7 @@ export default class Homeview extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
+        <Header navigation={this.props.navigation} />
         <Text style={{ fontSize: 30, margin: 20 }}>Pagina inicial</Text>
         <View style={styles.content}>
           <TouchableOpacity

@@ -1,6 +1,13 @@
-import { Image, StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import { Component } from "react";
-export default class App extends Component {
+export default class Header extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -11,6 +18,17 @@ export default class App extends Component {
           }}
         ></Image>
         <Text style={styles.headertext}>FixSystem </Text>
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => this.props.navigation.navigate("Usuario")}
+        >
+          <Image
+            style={styles.usericon}
+            source={{
+              uri: "https://cdn-icons-png.flaticon.com/512/1946/1946429.png",
+            }}
+          ></Image>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -30,6 +48,11 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     width: 120,
     height: 113,
+  },
+  usericon: {
+    resizeMode: "contain",
+    width: 40,
+    height: 37,
   },
   headertext: {
     fontSize: 30,
